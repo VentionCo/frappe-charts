@@ -2593,20 +2593,20 @@ function getChartRangeIntervals(max, min=0) {
 	let partSize = 1;
 
 	// To avoid too many partitions
-	if(range > 5) {
-		if(range % 2 !== 0) {
+	if (range > 5) {
+		if (range % 2 !== 0) {
 			upperBound++;
 			// Recalc range
 			range = upperBound - lowerBound;
 		}
-		noOfParts = range/2;
+		noOfParts = range / 2;
 		partSize = 2;
 	}
 
-	// Special case: 1 and 2
-	if(range <= 2) {
-		noOfParts = 4;
-		partSize = range/noOfParts;
+	// Special case: 0, 1 and 2
+	if (range <= 5) {
+		noOfParts = 5;
+		partSize = 1;
 	}
 
 	// Special case: 0
